@@ -6,7 +6,6 @@ import "fmt"
 type deck []string
 
 func new_deck() deck {
-
 	cards := []string{}
 
 	card_suit := []string{"Spades", "Dimonds", "Clubs", "Heart"}
@@ -19,9 +18,9 @@ func new_deck() deck {
 	}
 
 	return cards
-
 }
 
+// Receiver function
 func (d deck) print() {
 	for _, card := range d {
 		fmt.Println(card)
