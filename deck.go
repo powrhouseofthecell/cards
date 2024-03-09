@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strings"
 )
 
@@ -36,4 +37,11 @@ func deal(d deck, hand_size int) (deck, deck) {
 
 func (d deck) to_string() string {
 	return strings.Join([]string(d), ",")
+}
+
+func (d deck) shuffle() {
+	for i := range d {
+		new_position := rand.Intn(len(d) - 1)
+		d[i], d[new_position] = d[new_position], d[i]
+	}
 }
